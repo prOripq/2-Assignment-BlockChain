@@ -39,6 +39,8 @@ LICENSE - Open-source license information.
 
 ## Demo Screenshots
 
+![image](https://github.com/user-attachments/assets/a2216d4f-b478-4013-b76c-3cbb05d88ff8)
+
 ![image](https://github.com/user-attachments/assets/64b4bb29-045c-493e-873e-c400d5ce2eb4)
 
 ![image](https://github.com/user-attachments/assets/39d5f03a-f051-43cb-8843-8248eb0123c5)
