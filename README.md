@@ -27,7 +27,7 @@ Run the frontend with a local server.
 
 Use MetaMask to interact with the deployed contract.
 
-##Project Structure
+## Project Structure
 
 contracts/ - Contains the Solidity smart contract.
 
