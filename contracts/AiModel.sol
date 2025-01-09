@@ -7,47 +7,70 @@ contract AIModelMarketplace {
         string description;
         uint256 price;
         address payable creator;
-        uint256 ratingSum;
-        uint256 ratingCount;
+        uint8 ratingCount;
+        uint256 totalRating;
     }
 
-    Model[] public models;
-    mapping(address => uint256) public balances;
+    mapping(uint256 => Model) public models;
+    uint256 public modelCount;
+    address public owner;
+    uint256 public funds;
 
-    event ModelListed(uint256 modelId, string name, uint256 price);
-    event ModelPurchased(uint256 modelId, address buyer);
-    event ModelRated(uint256 modelId, uint8 rating);
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the contract owner can perform this action");
+        _;
+    }
+
+    constructor() payable {
+        owner = msg.sender;
+        modelCount = 0;
+        funds = 0;
+    }
 
     function listModel(string memory _name, string memory _description, uint256 _price) public {
-        models.push(Model(_name, _description, _price, payable(msg.sender), 0, 0));
-        emit ModelListed(models.length - 1, _name, _price);
+        modelCount++;
+        models[modelCount] = Model({
+            name: _name,
+            description: _description,
+            price: _price,
+            creator: payable(msg.sender),
+            ratingCount: 0,
+            totalRating: 0
+        });
     }
 
     function purchaseModel(uint256 _modelId) public payable {
         Model storage model = models[_modelId];
-        require(msg.value == model.price, "Incorrect price sent");
+        require(msg.value == model.price, "Incorrect payment amount");
+
+        // Transfer payment to the model creator
         model.creator.transfer(msg.value);
-        emit ModelPurchased(_modelId, msg.sender);
+        funds += msg.value;
     }
 
     function rateModel(uint256 _modelId, uint8 _rating) public {
         require(_rating >= 1 && _rating <= 5, "Rating must be between 1 and 5");
+
         Model storage model = models[_modelId];
-        model.ratingSum += _rating;
         model.ratingCount++;
-        emit ModelRated(_modelId, _rating);
+        model.totalRating += _rating;
     }
 
-    function withdrawFunds() public {
-        uint256 amount = balances[msg.sender];
-        require(amount > 0, "No funds to withdraw");
-        balances[msg.sender] = 0;
-        payable(msg.sender).transfer(amount);
+    function getModelDetails(uint256 _modelId) public view returns (string memory, string memory, uint256, address, uint8, uint256) {
+        Model memory model = models[_modelId];
+        return (
+            model.name,
+            model.description,
+            model.price,
+            model.creator,
+            model.ratingCount,
+            model.totalRating
+        );
     }
 
-    function getModelDetails(uint256 _modelId) public view returns (string memory, string memory, uint256, address, uint256) {
-        Model storage model = models[_modelId];
-        uint256 averageRating = model.ratingCount > 0 ? model.ratingSum / model.ratingCount : 0;
-        return (model.name, model.description, model.price, model.creator, averageRating);
+    function withdrawFunds() public onlyOwner {
+        uint256 amount = funds;
+        funds = 0;
+        payable(owner).transfer(amount);
     }
 }
