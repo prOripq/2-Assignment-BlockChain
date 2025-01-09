@@ -1,5 +1,5 @@
-#AI Model Marketplace dApp 
-**Done by Yussupov Zhangir SE-2315**
+# AI Model Marketplace dApp
+**Made by Yussupov Zhangir SE-2315**
 
 ##Overview
 
