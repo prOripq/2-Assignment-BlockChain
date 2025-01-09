@@ -57,20 +57,6 @@ LICENSE - Open-source license information.
 
 ![image](https://github.com/user-attachments/assets/0d324e38-9a0a-4dd7-b1b3-9b4ca0682798)
 
-## Example Usage
-
-1. **List a Model**:
-   Fill out the form and click "List Model" to add an AI model.
-
-2. **Purchase a Model**:
-   Click the "Purchase" button for a specific model.
-
-3. **Rate a Model**:
-   Select a purchased model, rate it, and submit.
-
-4. **Withdraw Funds**:
-   Click "Withdraw Funds" to retrieve earnings.
-
 ## License
 
 This project is licensed under the MIT License.
