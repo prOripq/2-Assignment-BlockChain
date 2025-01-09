@@ -1,0 +1,85 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url("https://webcomsystem.net/wp-content/uploads/smart-contracts.jpeg");
+    margin-left: 150px;
+    padding: 10px;
+    
+}
+
+
+h1 {
+    color: #cc7474;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #cc7474;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #64242f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#modelList {
+    width: 30%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input, select {
+    background-color: #000000;
+    color: aliceblue;
+    width: 10%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #555353;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: #adb4bd;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: rgb(20, 20, 20);
+    color: #ffffff;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #9e8d8d;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li strong {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+#fundsInfo, p {
+    color: #00ff15;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
