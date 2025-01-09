@@ -1,11 +1,11 @@
 # AI Model Marketplace dApp
 **Made by Yussupov Zhangir SE-2315**
 
-##Overview
+## Overview
 
 This decentralized application (dApp) allows users to list, purchase, and rate AI models. The smart contract manages the core functionality, while the frontend provides an intuitive interface for interaction.
 
-##Features
+## Features
 
 List AI Models: Users can list AI models with a name, description, and price.
 
@@ -17,7 +17,7 @@ Withdraw Funds: Creators can withdraw their earnings from model sales.
 
 View Model Details: Users can view information about listed models including the average rating.
 
-##Usage
+## Usage
 
 Deploy the smart contract to a local Ganache blockchain.
 
@@ -37,7 +37,7 @@ README.md - Project documentation.
 
 LICENSE - Open-source license information.
 
-##Demo Screenshots
+## Demo Screenshots
 
 ![image](https://github.com/user-attachments/assets/64b4bb29-045c-493e-873e-c400d5ce2eb4)
 
@@ -57,7 +57,7 @@ LICENSE - Open-source license information.
 
 ![image](https://github.com/user-attachments/assets/0d324e38-9a0a-4dd7-b1b3-9b4ca0682798)
 
-##License
+## License
 
 This project is licensed under the MIT License.
 
